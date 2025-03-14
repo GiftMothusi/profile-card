@@ -33,8 +33,6 @@ const MoreHorizontalIcon = () => {
             <path fillRule="evenodd" clipRule="evenodd" d="M16 4C17.1046 4 18 3.10457 18 2C18 0.895431 17.1046 0 16 0C14.8954 0 14 0.895431 14 2C14 3.10457 14.8954 4 16 4Z" fill="#111827"/>
         </svg>
     )
-    
-
 }
 
 const AddIcon = () => {
@@ -59,7 +57,7 @@ const AltIcon = () => {
 const ProfileCard: React.FC<{ nurse: NurseProfile }> = ({ nurse }) => {
   return (
     <div className={`bg-white rounded-xl p-4 border-none ${nurse.isSelected ? 'border-purple-500' : 'border-transparent'} mb-3`}>
-      <div className="flex justify-between">
+      <div className="relative">
         <div className="flex gap-3">
           <div className="w-10 h-10 relative overflow-hidden rounded-full">
             <Image 
@@ -72,11 +70,11 @@ const ProfileCard: React.FC<{ nurse: NurseProfile }> = ({ nurse }) => {
             />
           </div>
           <div>
-            <h3 className="font-bold text-lg text-black">{nurse.name}</h3>
-            <p className="text-black">{nurse.occupation}, {nurse.location}</p>
+            <h3 className="text-lg text-black">{nurse.name}</h3>
+            <p className="text-[#A0AEC0] font-light">{nurse.occupation}, {nurse.location}</p>
           </div>
         </div>
-        <button className="text-gray-600">
+        <button className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600">
           <MoreHorizontalIcon/>
         </button>
       </div>
@@ -84,11 +82,11 @@ const ProfileCard: React.FC<{ nurse: NurseProfile }> = ({ nurse }) => {
       <div className="flex mt-4">
         <div className="flex items-center mr-4">
          <MessageIcon/>
-          <span className="text-gray-400">{nurse.messageCount}</span>
+          <span className="text-gray-400 p-2">{nurse.messageCount}</span>
         </div>
         <div className="flex items-center">
           <AltIcon/>
-          <span className="text-gray-400">{nurse.atMentionCount}</span>
+          <span className="text-gray-400 pl-2">{nurse.atMentionCount}</span>
         </div>
       </div>
       
@@ -145,8 +143,8 @@ const Profile: React.FC = () => {
       <div className="bg-gray-100 rounded-3xl p-6 max-w-md mx-auto">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-2">
-            <h1 className="text-sm leading-8 font-semibold text-black">Put Forward</h1>
-            <div className=" border-2 border-[#27A376] bg-white-500 text-[#27A376] font-semibold rounded-xl w-8 h-8 flex items-center justify-center">
+            <h1 className="text-sm font-bold text-[#0F172A]">Put Forward</h1>
+            <div className=" border-2 border-[#27A376] bg-white-500 text-[#27A376] font-semibold rounded-md text-sm w-[20px] h-[20px] flex items-center justify-center">
               {nurses.length}
             </div>
           </div>
