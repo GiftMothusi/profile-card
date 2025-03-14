@@ -145,7 +145,7 @@ const Profile: React.FC = () => {
       <div className="bg-gray-100 rounded-3xl p-6 max-w-md mx-auto">
         <div className="flex justify-between items-center mb-4">
           <div className="flex items-center gap-2">
-            <h1 className="text-sm leading-8 font-semibold">Put Forward</h1>
+            <h1 className="text-sm leading-8 font-semibold text-black">Put Forward</h1>
             <div className=" border-2 border-[#27A376] bg-white-500 text-[#27A376] font-semibold rounded-xl w-8 h-8 flex items-center justify-center">
               {nurses.length}
             </div>
