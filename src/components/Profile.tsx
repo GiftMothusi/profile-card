@@ -57,7 +57,7 @@ const AltIcon = () => {
 const ProfileCard: React.FC<{ nurse: NurseProfile }> = ({ nurse }) => {
   return (
     <div className={`bg-white rounded-xl p-4 border-none ${nurse.isSelected ? 'border-purple-500' : 'border-transparent'} mb-3`}>
-      <div className="relative">
+      <div>
         <div className="flex gap-3">
           <div className="w-10 h-10 relative overflow-hidden rounded-full">
             <Image 
@@ -74,20 +74,22 @@ const ProfileCard: React.FC<{ nurse: NurseProfile }> = ({ nurse }) => {
             <p className="text-[#A0AEC0] font-light">{nurse.occupation}, {nurse.location}</p>
           </div>
         </div>
-        <button className="absolute right-0 top-1/2 -translate-y-1/2 text-gray-600">
-          <MoreHorizontalIcon/>
-        </button>
       </div>
       
-      <div className="flex mt-4">
-        <div className="flex items-center mr-4">
-         <MessageIcon/>
-          <span className="text-gray-400 p-2">{nurse.messageCount}</span>
+      <div className="flex justify-between mt-4">
+        <div className="flex">
+          <div className="flex items-center mr-4">
+            <MessageIcon/>
+            <span className="text-gray-400 p-2">{nurse.messageCount}</span>
+          </div>
+          <div className="flex items-center">
+            <AltIcon/>
+            <span className="text-gray-400 pl-2">{nurse.atMentionCount}</span>
+          </div>
         </div>
-        <div className="flex items-center">
-          <AltIcon/>
-          <span className="text-gray-400 pl-2">{nurse.atMentionCount}</span>
-        </div>
+        <button className="text-gray-600">
+          <MoreHorizontalIcon/>
+        </button>
       </div>
       
       {!nurse.isSelected && (
